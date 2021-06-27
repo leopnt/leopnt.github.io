@@ -27,11 +27,6 @@ hr {
   left: 0;
 }
 
-.avatar-circle {
-  background: linear-gradient(0.4turn, #52e5e7 0%, #130cb7 100%);
-  box-shadow: rgba(0, 0, 0, 0.336) 2px 2px 20px 5px;
-}
-
 .work-card {
   position: absolute;
   box-shadow: rgba(0, 0, 0, 0.336) 2px 2px 20px 5px;
