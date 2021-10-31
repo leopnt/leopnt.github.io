@@ -1,0 +1,40 @@
+.contact-button {
+  background-color: transparent;
+  border-width: 0;
+  color: black;
+  letter-spacing: 5px;
+  font-weight: bold;
+  transition: color 0.5s;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  color: rgba(0, 0, 0, 0.774);
+}
+
+.lets-talk-button {
+  background-color: #4f419d;
+  color: white;
+  border-radius: 100px;
+  border-width: 0;
+  padding: 10px 40px 10px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+
+.lets-talk-button:hover {
+  background-color: #3d3279;
+}
+
+.close-button {
+  background-color: transparent;
+  border-width: 0;
+  cursor: pointer;
+}
+
+.close-button img {
+  height: 16px;
+}

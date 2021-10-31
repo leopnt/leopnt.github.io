@@ -1,0 +1,26 @@
+.Welcome {
+  position: relative;
+  height: 450px;
+}
+
+.content {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.glass-wave {
+  position: absolute;
+  width: 200%;
+  top: -20px;
+  right: 0;
+  min-width: 1440px;
+  height: 450px;
+  left: 50%;
+  margin: 0 auto;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.Welcome .lets-talk-button {
+  margin-top: 30px;
+}

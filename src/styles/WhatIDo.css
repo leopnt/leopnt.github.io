@@ -1,0 +1,16 @@
+.WhatIDo {
+  text-align: center;
+  color: white;
+}
+
+.whatido-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.whatido-content div {
+  padding-left: 10px;
+  padding-right: 10px;
+}
