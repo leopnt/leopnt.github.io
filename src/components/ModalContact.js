@@ -32,9 +32,7 @@ const ModalContact = ({ showContact, setShowContact }) => {
         </button>
         <h3>Contact</h3>
         <h4>📧 E-Mail</h4>
-        <a href="mailto:leopnt.dev@gmail.com">leopnt.dev@gmail.com</a>
-        <h4>📞 Mobile</h4>
-        <a href="tel:+33605310120">+336 05 31 01 20</a>
+        <a href="mailto:leopnt.dev@gmail.com">leopnt.dev@gmail.com</a> 
       </div>
     </div>
   );
