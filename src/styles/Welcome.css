@@ -1,3 +1,7 @@
 .Welcome {
-  background-color: green;
+}
+
+.Welcome h2 {
+  margin: 0;
+  padding: 0;
 }
