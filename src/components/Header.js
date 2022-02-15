@@ -5,9 +5,9 @@ import "../styles/Header.css";
 const Header = () => {
   return (
     <div className="Header">
-      <ul>
+      <ul className="Page">
         <li>
-          <a href="#Welcome">Welcome</a>
+          <a href="#top">Welcome</a>
         </li>
         <li>
           <a href="#whoami">Whoami</a>

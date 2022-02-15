@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import Project from "./Project";
+import api_url from "../config";
 
 import "../styles/Projects.css";
 
-const url = "http://localhost:8080/api/v1/projects";
+const url = api_url + "projects";
 
 const Projects = () => {
   const [error, setError] = useState(null);
@@ -31,15 +33,23 @@ const Projects = () => {
       return "Loading...";
     } else {
       return projects.map((project) => (
-        <div key={project.name}>{project.name}</div>
+        <Project
+          key={project.name}
+          title={project.name}
+          description={project.description}
+          imgUrl={project.cover_picture_url}
+          topics={project.topics.split(",")}
+          url={project.url}
+        />
       ));
     }
   };
 
   return (
-    <div className="Projects" id="projects">
+    <div className="Projects">
+      <div className="anchor" id="projects" />
       <h2>Projects</h2>
-      <div>{content()}</div>
+      <div className="Content">{content()}</div>
     </div>
   );
 };

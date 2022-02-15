@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import api_url from "../config";
 
 import legosImg from "../assets/legos.png";
 
 import "../styles/Whoami.css";
 
-const url = "http://localhost:8080/api/v1/personal";
+const url = api_url + "personal";
 
 const parseParaphraph = (paragraph) => {
   return (
@@ -51,10 +52,13 @@ const Whoami = () => {
   };
 
   return (
-    <div className="Whoami" id="whoami">
+    <div className="Whoami">
+      <div className="anchor" id="whoami" />
       <h2>Whoami</h2>
-      <div>{content()}</div>
-      <img src={legosImg} alt="legos" />
+      <div className="CRT">
+        <div className="Paragraph">{content()}</div>
+        <img className="LegosImg" src={legosImg} alt="legos" />
+      </div>
     </div>
   );
 };

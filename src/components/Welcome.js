@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import api_url from "../config";
 
 import avatarImg from "../assets/avatar.png";
 
 import "../styles/Welcome.css";
+import Spacer from "./Spacer";
 
-const url = "http://localhost:8080/api/v1/personal";
+const url = api_url + "personal";
 
 const Welcome = () => {
   const [error, setError] = useState(null);
@@ -28,22 +30,30 @@ const Welcome = () => {
 
   const content = () => {
     if (error) {
-      return "WhoOps! Something went wrong 🤔";
+      return (
+        <div>
+          WhoOps! Something went wrong{" "}
+          <span role="img" aria-label="thinking face">
+            🤔
+          </span>
+        </div>
+      );
     } else if (!isLoaded) {
       return "Loading...";
     } else {
       return (
         <div>
-          <h2>Hi, I'm {personalInfos.first_name}</h2>
-          <div>{personalInfos.title}</div>
+          <h1>Hi, I'm {personalInfos.first_name}</h1>
+          <div className="Title">{personalInfos.title}</div>
         </div>
       );
     }
   };
 
   return (
-    <div className="Welcome" id="welcome">
+    <div className="Welcome">
       {content()}
+      <Spacer height={"32px"} />
       <img src={avatarImg} alt="avatar" />
     </div>
   );

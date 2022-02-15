@@ -8,16 +8,25 @@ import Footer from "./Footer";
 import Spacer from "./Spacer";
 
 import "../styles/App.css";
+import Links from "./Links";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Welcome />
-      <Whoami />
-      <Projects />
-      <Skills />
-      <Spacer height={"200px"} />
+      <div className="Page">
+        <Spacer height={"64px"} />
+        <Welcome />
+        <Spacer height={"128px"} />
+        <Whoami />
+        <Spacer height={"64px"} />
+        <Links />
+        <Spacer height={"64px"} />
+        <Projects />
+        <Spacer height={"64px"} />
+        <Skills />
+        <Spacer height={"64px"} />
+      </div>
       <Footer />
     </div>
   );

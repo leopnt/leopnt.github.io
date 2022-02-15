@@ -1,0 +1,62 @@
+.Skill {
+  padding: 16px;
+  background: #303439;
+  box-shadow: 4px 4px 16px rgba(17, 17, 18, 0.8),
+    -4px -4px 16px rgba(78, 83, 89, 0.8);
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.Skill .Name {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.Skill img {
+  height: 14px;
+  opacity: 0.8;
+  transition: 0.3s;
+  padding-left: 16px;
+}
+
+.Skill .Right {
+  text-align: center;
+}
+
+.Skill:hover * {
+  opacity: 1;
+}
+
+.Skill .Level {
+  display: flex;
+  gap: 4px;
+  padding-top: 8px;
+}
+
+.Skill .Level .green-bar {
+  background: #00ff47;
+  transition: 0.6s;
+  opacity: 0.5;
+  border-radius: 11px;
+  width: 32px;
+  height: 8px;
+}
+
+.Skill:hover .Level .green-bar {
+  box-shadow: 0px 0px 8px #00ff47;
+  opacity: 0.8;
+}
+
+.Skill .Level .white-bar {
+  background: #ffffff;
+  opacity: 0.25;
+  border-radius: 11px;
+  width: 32px;
+  height: 8px;
+}

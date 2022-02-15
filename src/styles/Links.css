@@ -1,0 +1,45 @@
+.Links {
+  text-align: center;
+}
+
+.Links .Content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.Links .Linkedin {
+  width: 170px;
+}
+
+.Links a {
+}
+
+.Links img {
+  padding: 12px;
+  opacity: 0.8;
+  transition: 0.3s;
+  width: 48px;
+  height: 48px;
+}
+
+.Links button {
+  cursor: pointer;
+  background: linear-gradient(141.07deg, #464a51 8.26%, #2e3238 89.59%);
+  border: 6px solid #24272c;
+  box-sizing: border-box;
+  box-shadow: 8px 8px 16px 6px #111112, -8px -8px 8px #4e5359;
+  border-radius: 128px;
+}
+
+.Links button:hover * {
+  opacity: 1;
+}
+
+.Links button:active {
+  background: linear-gradient(141.07deg, #464a51 8.26%, #2e3238 89.59%);
+  box-shadow: 8px 8px 16px 6px #111112, -8px -8px 8px #4e5359,
+    inset -8px -8px 12px 6px rgba(78, 83, 89, 0.5),
+    inset 8px 8px 12px 6px rgba(0, 0, 0, 0.25);
+}
