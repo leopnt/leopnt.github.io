@@ -6,7 +6,7 @@ import avatarImg from "../assets/avatar.png";
 import "../styles/Welcome.css";
 import Spacer from "./Spacer";
 
-const url = api_url + "personal";
+const url = api_url + "personal/";
 
 const Welcome = () => {
   const [error, setError] = useState(null);

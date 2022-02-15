@@ -5,7 +5,7 @@ import legosImg from "../assets/legos.png";
 
 import "../styles/Whoami.css";
 
-const url = api_url + "personal";
+const url = api_url + "personal/";
 
 const parseParaphraph = (paragraph) => {
   return (

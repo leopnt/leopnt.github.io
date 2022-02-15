@@ -8,7 +8,7 @@ import MailIcon from "../assets/icons/mail.png";
 
 import "../styles/Links.css";
 
-const url = api_url + "links";
+const url = api_url + "links/";
 
 const Links = () => {
   const [error, setError] = useState(null);

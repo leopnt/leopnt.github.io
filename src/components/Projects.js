@@ -4,7 +4,7 @@ import api_url from "../config";
 
 import "../styles/Projects.css";
 
-const url = api_url + "projects";
+const url = api_url + "projects/";
 
 const Projects = () => {
   const [error, setError] = useState(null);

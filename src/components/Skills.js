@@ -4,7 +4,7 @@ import api_url from "../config";
 import "../styles/Skills.css";
 import Skill from "./Skill";
 
-const url = api_url + "skills";
+const url = api_url + "skills/";
 
 const Skills = () => {
   const [error, setError] = useState(null);
