@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import api_url from "../config";
 
 import legosImg from "../assets/legos.png";
+import Loading from "./Loading";
 
 import "../styles/Whoami.css";
 
@@ -45,7 +46,7 @@ const Whoami = () => {
     if (error) {
       return "WhoOps! Something went wrong 🤔";
     } else if (!isLoaded) {
-      return "Loading...";
+      return <Loading />;
     } else {
       return parseParaphraph(personalInfos.description);
     }

@@ -5,6 +5,7 @@ import avatarImg from "../assets/avatar.png";
 
 import "../styles/Welcome.css";
 import Spacer from "./Spacer";
+import Loading from "./Loading";
 
 const url = api_url + "personal/";
 
@@ -39,7 +40,7 @@ const Welcome = () => {
         </div>
       );
     } else if (!isLoaded) {
-      return "Loading...";
+      return <Loading />;
     } else {
       return (
         <div>

@@ -7,6 +7,7 @@ import ItchIcon from "../assets/icons/itch.png";
 import MailIcon from "../assets/icons/mail.png";
 
 import "../styles/Links.css";
+import Loading from "./Loading";
 
 const url = api_url + "links/";
 
@@ -64,7 +65,7 @@ const Links = () => {
     if (error) {
       return "WhoOps! Something went wrong 🤔";
     } else if (!isLoaded) {
-      return "Loading...";
+      return <Loading />;
     } else {
       return links.map((link) => {
         return <a href={link.url}>{getButton(link.name)}</a>;

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import api_url from "../config";
 
 import "../styles/Skills.css";
+import Loading from "./Loading";
 import Skill from "./Skill";
 
 const url = api_url + "skills/";
@@ -30,7 +31,7 @@ const Skills = () => {
     if (error) {
       return "WhoOps! Something went wrong 🤔";
     } else if (!isLoaded) {
-      return "Loading...";
+      return <Loading />;
     } else {
       return skills.map((skill) => (
         <Skill

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Project from "./Project";
 import api_url from "../config";
+import Loading from "./Loading";
 
 import "../styles/Projects.css";
 
@@ -30,7 +31,7 @@ const Projects = () => {
     if (error) {
       return "WhoOps! Something went wrong 🤔";
     } else if (!isLoaded) {
-      return "Loading...";
+      return <Loading />;
     } else {
       return projects.map((project) => (
         <Project
