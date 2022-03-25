@@ -38,8 +38,8 @@ if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
   throw "Cannot link program: " + e;
 }
 
-const nb_vertices_per_line = 512;
-const nb_lines = 64;
+const nb_vertices_per_line = 128;
+const nb_lines = 32;
 const nb_vertices = nb_lines * nb_vertices_per_line;
 
 function makeLine(zPos) {
