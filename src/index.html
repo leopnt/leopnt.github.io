@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title>Document</title>
+
+        <script src="../lib/utils.js"></script>
+    </head>
+    <body>
+        <div class="scene" id="scene">
+            <div class="card" id="card">
+                <div class="card__layer card__layer--front">
+                    <div class="card__page card__page--front">
+                        <div class="header">
+                            <a href="mailto:leopnt.dev@gmail.com">leopnt.dev@gmail.com</a>
+                            <p>Polytech - IdéSYS</p>
+                        </div>
+                        
+                        <div class="name-title">
+                            <h1>Léo POINET</h1>
+                            <p>CS Student & CIO</p>
+                        </div>
+                        <div class="footer">
+                            <p>Born in 2000 in Tours, France.</p>
+                            <p>Currently in Nantes, France.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card__layer card__layer--middle" id="flip-button">
+                    <img id="flip-hint-anim" src="./hint-anim.svg" alt="click on page to flip">
+                    <canvas class="card__layer card__layer--middle" id="webgl-canvas">
+                            Your browser doesn't seem to support WebGl
+                    </canvas>
+                </div>
+
+                <div class="card__layer card__layer--back">
+                    <div class="card__page card__page--back">
+                        <p class="pitch">
+                            <em>Did you ever played LEGO™ ? So you just discovered my vision of IT:
+                                simplify problems into elementary bricks and assemble them to find a creative solution. </em>
+                        </p>
+                        <br>
+                        <p>Let's build together now !</p>
+                        <br>
+                        <br>
+                        <h1 >Latest works</h1>
+                        <br>
+                        <a href="https://github.com/leopnt/blablacar-weekly-bot" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <h2>BlaBlaCar Weekly Bot</h2>
+                            <hr>
+                            <p class="project-date">2022</p>
+                        </a>
+                        <br>
+                        <a href="https://github.com/leopnt/blockblockcoin" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <h2>BlockBlockCoin</h2>
+                            <hr>
+                            <p class="project-date">2022</p>
+                        </a>
+                        <br>
+                        <a href="https://github.com/leopnt/neft-godot" class="project-link" target="_blank" rel="noopener noreferrer">
+                            <h2>NEFT for Godot</h2>
+                            <hr>
+                            <p class="project-date">2021</p>
+                        </a>
+
+
+                        <div class="external-links">
+                            <a href="https://linkedin.com/in/leopoinet"><img src="linkedin.png" alt="linkedin"></a>
+                            <a href="https://github.com/leopnt"><img src="github.png" alt="github"></a>
+                            <a href="https://leopnt.itch.io"><img src="itch.png" alt="itch.io"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card__caption card__caption--bottom">
+                    Copyright © leopnt 2022. All rights reserved.
+                </div>
+                <div class="card__caption card__caption--side">
+                    <em>Powered by WebGL</em>
+                </div>
+            </div>
+        </div>
+
+        <script id="vert-shader" type="x-shader/x-vertex">
+// Vertex Shader
+
+precision mediump int;
+precision mediump float;
+
+uniform vec4 u_Color;
+uniform float u_Time;
+uniform vec2 u_Mouse;
+
+attribute vec3 a_Vertex;
+
+float noise(float x) {
+    float y = 0.0;
+
+    for (int i = 0; i < 10; i++) {
+        y += 0.10 * sin(float(i / 2) * float(i) * x + float(i / 3));
+    }
+
+    return y;
+}
+
+void main() {
+  float x = a_Vertex.x;
+  float y = a_Vertex.y;
+  float z = a_Vertex.z;
+
+  float theta_x = 1.0 + 0.1 * u_Mouse.x;
+  mat4 rot_y = mat4(mat3( cos(theta_x),            0, sin(theta_x),
+                                     0,            1,            0,
+                         -sin(theta_x),            0, cos(theta_x)));
+
+  float theta_y = 1.0 + 0.5 * u_Mouse.y;
+  mat4 rot_x = mat4(mat3(            1,            0,            0,
+                                     0, cos(theta_y),-sin(theta_y),
+                                     0, sin(theta_y), cos(theta_y)));
+  
+  vec4 trans = vec4(0.0, 0.2 * noise(0.06 * u_Time + x + 50.0 * z + z), 0.0, 0.0);
+  trans += vec4(0.0, 0.3 * exp(-(30.0 * x * x)), 0.0, 0.0);
+  trans += vec4(-0.7 + 0.1 * u_Mouse.x, -0.2, 0.0, 0.0);
+  vec4 scale = vec4(0.7, 1.0, 1.6, 1.0);
+
+  float zToDivideBy = 1.0 + z * 0.5; // adds perspective
+
+  gl_Position = rot_x * ((vec4(x / zToDivideBy, y / zToDivideBy, z, 0.8) * scale + trans));
+}
+        </script>
+
+        <script id="frag-shader" type="x-shader/x-fragment">
+// Fragment shader
+
+precision mediump int;
+precision mediump float;
+
+uniform vec4 u_Color;
+uniform float u_Time;
+
+void main() {
+    gl_FragColor = u_Color;
+}
+        </script>
+
+        <script src="main.js"></script>
+    </body>
+</html>

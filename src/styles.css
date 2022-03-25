@@ -1,0 +1,246 @@
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(OpenSans/OpenSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: OpenSans-Light;
+  src: url(OpenSans/OpenSans-Light.ttf);
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-size: 1em;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.scene {
+  width: 100%;
+  height: 100vh;
+
+  padding: 1.1em;
+  box-sizing: border-box;
+
+  perspective: 200vw;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  border: 0.1px solid white;
+  border-radius: 1px;
+  box-sizing: border-box;
+
+  transition: transform 1.5s;
+  transform-style: preserve-3d;
+}
+
+.card__layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card__layer--front {
+  transform: translateZ(1px);
+
+  pointer-events: none; /* click passthrough */
+}
+
+.card__layer--middle {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+.card__layer--back {
+  transform: rotateY(180deg) translateZ(1px);
+
+  pointer-events: none; /* click passthrough */
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card__caption {
+  position: absolute;
+  font-size: 0.7em;
+  transition: 0.4s;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: monospace;
+}
+
+.card__caption--bottom {
+  bottom: -1.6em;
+  right: 0;
+  transform: translateZ(1px);
+}
+
+.card__caption--side {
+  transform: rotateZ(-90deg);
+  bottom: 4.5em;
+  left: -5.6em;
+  text-align: center;
+}
+
+.card.is-flipped .card__caption--bottom {
+  transform: rotateY(-180deg);
+}
+
+.card.is-flipped .card__caption--side {
+  transform: rotateZ(-90deg) rotateY(180deg);
+}
+
+.card__layer .card__page * {
+  pointer-events: all; /* disable click passthrough for all elements inside */
+}
+
+.card__page {
+  width: 100%;
+  height: 100%;
+
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.card__page--front {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__page--front .header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  pointer-events: none;
+}
+
+.card__page--front .header a {
+  color: white;
+  text-decoration: none;
+}
+
+.card__page--front .header a:hover {
+  text-decoration: underline;
+}
+
+.card__page--front .header p {
+  text-align: right;
+}
+
+.card__page--front .name-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.card__page--front .footer {
+  pointer-events: none;
+  display: flex;
+  column-gap: 0.3em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (max-width: 780px) {
+  .card__page--front .footer {
+    width: 80%;
+    justify-content: flex-start;
+  }
+}
+
+.card__page--back {
+  width: 50%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 780px) {
+  .card__page--back {
+    width: 100%;
+  }
+}
+
+.card__page--back .external-links {
+  position: absolute;
+  bottom: 0.8em;
+  right: 1em;
+  display: flex;
+  column-gap: 1.6em;
+
+  pointer-events: none;
+}
+
+.card__page--back .external-links img {
+  width: 38px;
+  opacity: 1;
+
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.card__page--back .external-links img:hover {
+  opacity: 0.5;
+}
+
+.pitch {
+  text-align: justify;
+}
+
+.project-link {
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  font-family: OpenSans-Light;
+}
+
+.project-link h2 {
+  font-weight: 100;
+}
+
+.project-link:hover * {
+  color: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.project-date {
+  text-align: end;
+}
+
+#flip-hint-anim {
+  width: 40px;
+
+  position: absolute;
+  right: 0.9em;
+  bottom: 0.9em;
+  z-index: 1;
+
+  cursor: default;
+
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.card:has(#flip-hint-anim:hover) {
+  box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.8);
+}
