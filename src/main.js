@@ -77,15 +77,13 @@ const vertices = new Float32Array(makeLines());
 const lines_buffer = gl.createBuffer();
 gl.bindBuffer(gl.ARRAY_BUFFER, lines_buffer);
 gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
-gl.bindBuffer(gl.ARRAY_BUFFER, null);
 
-const colorLocation = gl.getUniformLocation(prog, "u_Color");
 const timeLocation = gl.getUniformLocation(prog, "u_Time");
 const vertexLocation = gl.getAttribLocation(prog, "a_Vertex");
 const mouseLocation = gl.getUniformLocation(prog, "u_Mouse");
 
 gl.enable(gl.DEPTH_TEST);
-gl.clearColor(0, 0, 0, 1.0);
+gl.clearColor(0, 0, 0, 0.0);
 
 var t = 0;
 function update(delta) {
@@ -99,13 +97,8 @@ function update(delta) {
 }
 
 function draw() {
-  gl.clear(gl.COLOR_BUFFER_BIT);
-
   gl.useProgram(prog);
 
-  gl.bindBuffer(gl.ARRAY_BUFFER, lines_buffer);
-
-  gl.uniform4f(colorLocation, 0.7, 0.7, 0.7, 1.0);
   gl.uniform1f(timeLocation, t);
   gl.uniform2fv(mouseLocation, mouse);
 

@@ -31,7 +31,9 @@
                 </div>
 
                 <div class="card__layer card__layer--middle" id="flip-button">
-                    <img id="flip-hint-anim" src="./src/hint-anim.svg" alt="click on page to flip">
+                    <div id="flip-hint-anim-container">
+                        <div id="flip-hint-anim"></div>
+                    </div>
                     <canvas class="card__layer card__layer--middle" id="webgl-canvas">
                             Your browser doesn't seem to support WebGl
                     </canvas>
@@ -90,7 +92,6 @@
 precision mediump int;
 precision mediump float;
 
-uniform vec4 u_Color;
 uniform float u_Time;
 uniform vec2 u_Mouse;
 
@@ -138,11 +139,8 @@ void main() {
 precision mediump int;
 precision mediump float;
 
-uniform vec4 u_Color;
-uniform float u_Time;
-
 void main() {
-    gl_FragColor = u_Color;
+    gl_FragColor = vec4(0.7, 0.7, 0.7, 1.0);
 }
         </script>
 
