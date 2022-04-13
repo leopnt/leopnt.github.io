@@ -12,6 +12,7 @@ body {
   background-color: black;
   color: white;
   font-size: 1em;
+  overflow: hidden; /* hide scrollbars */
 }
 
 * {
