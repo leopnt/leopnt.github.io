@@ -81,6 +81,7 @@ gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
 const timeLocation = gl.getUniformLocation(prog, 'u_Time');
 const vertexLocation = gl.getAttribLocation(prog, 'a_Vertex');
 const mouseLocation = gl.getUniformLocation(prog, 'u_Mouse');
+const screenSizeLocation = gl.getUniformLocation(prog, 'u_ScreenSize');
 
 gl.enable(gl.DEPTH_TEST);
 gl.clearColor(0, 0, 0, 0.0);
@@ -90,7 +91,7 @@ function update(delta) {
     mouse[0] = lerp(mouse[0], flipMouseFlowX * mouseTarget[0], 0.05);
     mouse[1] = lerp(mouse[1], mouseTarget[1], 0.05);
 
-    t += 0.1;
+    t += 0.06;
     if (t > 1024 * Math.PI) {
         t = 0;
     }
@@ -101,11 +102,15 @@ function draw() {
 
     gl.uniform1f(timeLocation, t);
     gl.uniform2fv(mouseLocation, mouse);
+    gl.uniform2fv(screenSizeLocation, [
+        canvas.clientWidth,
+        canvas.clientHeight,
+    ]);
 
     gl.vertexAttribPointer(vertexLocation, 3, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(vertexLocation);
 
-    gl.drawArrays(gl.LINES, 0, nb_vertices);
+    gl.drawArrays(gl.POINTS, 0, nb_vertices);
 }
 
 function loop(timestamp) {

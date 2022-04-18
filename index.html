@@ -94,6 +94,7 @@ precision mediump float;
 
 uniform float u_Time;
 uniform vec2 u_Mouse;
+uniform vec2 u_ScreenSize;
 
 attribute vec3 a_Vertex;
 
@@ -112,23 +113,24 @@ void main() {
   float y = a_Vertex.y;
   float z = a_Vertex.z;
 
-  float theta_x = 1.0 + 0.1 * u_Mouse.x;
+  float theta_x = 1.0 + 0.05 * u_Mouse.x;
   mat4 rot_y = mat4(mat3( cos(theta_x),            0, sin(theta_x),
                                      0,            1,            0,
                          -sin(theta_x),            0, cos(theta_x)));
 
-  float theta_y = 1.0 + 0.5 * u_Mouse.y;
+  float theta_y = 1.0 + 0.07 * u_Mouse.y;
   mat4 rot_x = mat4(mat3(            1,            0,            0,
                                      0, cos(theta_y),-sin(theta_y),
                                      0, sin(theta_y), cos(theta_y)));
   
   vec4 trans = vec4(0.0, 0.2 * noise(0.06 * u_Time + x + 50.0 * z + z), 0.0, 0.0);
   trans += vec4(0.0, 0.3 * exp(-(30.0 * x * x)), 0.0, 0.0);
-  trans += vec4(-0.7 + 0.1 * u_Mouse.x, -0.2, 0.0, 0.0);
-  vec4 scale = vec4(0.7, 1.0, 1.6, 1.0);
+  trans += vec4(-0.7 + 0.05 * u_Mouse.x, -0.2, 0.0, 0.0);
+  vec4 scale = vec4(1000.0 / u_ScreenSize.x, 1.0, 1.6, 1.0);
 
   float zToDivideBy = 1.0 + z * 0.5; // adds perspective
 
+  gl_PointSize = 2.0;
   gl_Position = rot_x * ((vec4(x / zToDivideBy, y / zToDivideBy, z, 0.8) * scale + trans));
 }
         </script>
@@ -139,8 +141,11 @@ void main() {
 precision mediump int;
 precision mediump float;
 
+uniform vec2 u_ScreenSize;
+
 void main() {
-    gl_FragColor = vec4(0.7, 0.7, 0.7, 1.0);
+    vec2 uv = gl_FragCoord.xy / u_ScreenSize;
+    gl_FragColor = vec4(0.6 - uv.x, 0.6 - uv.x, 0.6 - uv.x, 1.0);
 }
         </script>
 
