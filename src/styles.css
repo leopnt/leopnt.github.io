@@ -8,11 +8,33 @@
   src: url(OpenSans/OpenSans-Light.ttf);
 }
 
+@font-face {
+  font-family: "Hahmlet-Thin";
+  src: url("Hahmlet/Hahmlet-Thin.ttf");
+}
+
+@font-face {
+  font-family: "Hahmlet-Regular";
+  src: url("Hahmlet/Hahmlet-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Hahmlet-Bold";
+  src: url("Hahmlet/Hahmlet-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Racing-Sans-One";
+  src: url("Racing_Sans_One/RacingSansOne-Regular.ttf");
+}
+
 body {
   background-color: black;
   color: white;
   font-size: 1em;
-  overflow: hidden; /* hide scrollbars */
+  overflow: hidden;
+  font-family: 'Racing-Sans-One';
+  /* hide scrollbars */
 }
 
 * {
@@ -55,7 +77,8 @@ body {
 .card__layer--front {
   transform: translateZ(1px);
 
-  pointer-events: none; /* click passthrough */
+  pointer-events: none;
+  /* click passthrough */
 }
 
 .card__layer--middle {
@@ -66,7 +89,8 @@ body {
 .card__layer--back {
   transform: rotateY(180deg) translateZ(1px);
 
-  pointer-events: none; /* click passthrough */
+  pointer-events: none;
+  /* click passthrough */
 }
 
 .card.is-flipped {
@@ -103,7 +127,8 @@ body {
 }
 
 .card__layer .card__page * {
-  pointer-events: all; /* disable click passthrough for all elements inside */
+  pointer-events: all;
+  /* disable click passthrough for all elements inside */
 }
 
 .card__page {
@@ -210,10 +235,15 @@ body {
   text-decoration: none;
   color: white;
   font-family: OpenSans-Light;
+  font-size: small;
 }
 
 .project-link h2 {
   font-weight: 100;
+}
+
+.project-link hr {
+  border: 0.1px solid white;
 }
 
 .project-link:hover * {
@@ -221,7 +251,7 @@ body {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-.project-date {
+.project-description {
   text-align: end;
 }
 
@@ -249,18 +279,23 @@ body {
   0% {
     transform: scale(1);
   }
+
   3% {
     transform: scale(0.7);
   }
+
   10% {
     transform: scale(1);
   }
+
   15% {
     transform: rotateY(0deg);
   }
+
   35% {
     transform: rotateY(180deg);
   }
+
   100% {
     transform: rotateY(180deg);
   }

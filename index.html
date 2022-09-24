@@ -1,92 +1,102 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./src/styles.css">
-        <title>leopnt</title>
 
-        <script src="./lib/utils.js"></script>
-    </head>
-    <body>
-        <div class="scene" id="scene">
-            <div class="card" id="card">
-                <div class="card__layer card__layer--front">
-                    <div class="card__page card__page--front">
-                        <div class="header">
-                            <a href="mailto:leopnt.dev@gmail.com">leopnt.dev@gmail.com</a>
-                            <p>Polytech - IdéSYS</p>
-                        </div>
-                        
-                        <div class="name-title">
-                            <h1>Léo POINET</h1>
-                            <p>CS Student & CIO</p>
-                        </div>
-                        <div class="footer">
-                            <p>Born in 2000 in Tours, France.</p>
-                            <p>Currently in Nantes, France.</p>
-                        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles.css">
+    <title>leopnt</title>
+
+    <script src="./lib/utils.js"></script>
+</head>
+
+<body>
+    <div class="scene" id="scene">
+        <div class="card" id="card">
+            <div class="card__layer card__layer--front">
+                <div class="card__page card__page--front">
+                    <div class="header">
+                        <a href="mailto:leopnt.dev@gmail.com">leopnt.dev@gmail.com</a>
+                        <p>Polytech - IdéSYS</p>
                     </div>
-                </div>
 
-                <div class="card__layer card__layer--middle" id="flip-button">
-                    <div id="flip-hint-anim-container">
-                        <div id="flip-hint-anim"></div>
+                    <div class="name-title">
+                        <h1>Léo POINET</h1>
+                        <p>CS Student & CIO</p>
                     </div>
-                    <canvas class="card__layer card__layer--middle" id="webgl-canvas">
-                            Your browser doesn't seem to support WebGl
-                    </canvas>
-                </div>
-
-                <div class="card__layer card__layer--back">
-                    <div class="card__page card__page--back">
-                        <p class="pitch">
-                            <em>Did you ever played LEGO™ ? So you just discovered my vision of computer science:
-                                simplify problems into elementary bricks and assemble them to find a creative solution. </em>
-                        </p>
-                        <br>
-                        <p>Let's build together now !</p>
-                        <br>
-                        <br>
-                        <h1 >Latest works</h1>
-                        <br>
-                        <a href="https://github.com/leopnt/blablacar-weekly-bot" class="project-link" target="_blank" rel="noopener noreferrer">
-                            <h2>BlaBlaCar Weekly Bot</h2>
-                            <hr>
-                            <p class="project-date">2022</p>
-                        </a>
-                        <br>
-                        <a href="https://github.com/leopnt/blockblockcoin" class="project-link" target="_blank" rel="noopener noreferrer">
-                            <h2>BlockBlockCoin</h2>
-                            <hr>
-                            <p class="project-date">2022</p>
-                        </a>
-                        <br>
-                        <a href="https://github.com/leopnt/neft-godot" class="project-link" target="_blank" rel="noopener noreferrer">
-                            <h2>NEFT for Godot</h2>
-                            <hr>
-                            <p class="project-date">2021</p>
-                        </a>
-
-
-                        <div class="external-links">
-                            <a href="https://linkedin.com/in/leopoinet"><img src="./src/linkedin.png" alt="linkedin"></a>
-                            <a href="https://github.com/leopnt"><img src="./src/github.png" alt="github"></a>
-                            <a href="https://leopnt.itch.io"><img src="./src/itch.png" alt="itch.io"></a>
-                        </div>
+                    <div class="footer">
+                        <p>Born in 2000 in Tours, France.</p>
+                        <p>Currently in Nantes, France.</p>
                     </div>
-                </div>
-                <div class="card__caption card__caption--bottom">
-                    Copyright © leopnt 2022. All rights reserved.
-                </div>
-                <div class="card__caption card__caption--side">
-                    <em>Powered by WebGL</em>
                 </div>
             </div>
-        </div>
 
-        <script id="vert-shader" type="x-shader/x-vertex">
+            <div class="card__layer card__layer--middle" id="flip-button">
+                <div id="flip-hint-anim-container">
+                    <div id="flip-hint-anim"></div>
+                </div>
+                <canvas class="card__layer card__layer--middle" id="webgl-canvas">
+                    Your browser doesn't seem to support WebGl
+                </canvas>
+            </div>
+
+            <div class="card__layer card__layer--back">
+                <div class="card__page card__page--back">
+                    <p class="pitch">
+                        Did you ever played LEGO™ ? So you just discovered my vision of computer science:
+                        simplify problems into elementary bricks and assemble them to find a creative solution.
+                    </p>
+                    <br>
+                    <p>Let's build together now !</p>
+                    <br>
+                    <h1>Latest works</h1>
+                    <a href="https://github.com/leopnt/chip8-interpreter" class="project-link" target="_blank"
+                        rel="noopener noreferrer">
+                        <h2>CHIP-8 Emulator</h2>
+                        <hr>
+                        <p class="project-description">CHIP-8 Interpreter from scratch because it's fun</p>
+                    </a>
+                    <a href="https://github.com/leopnt/hold-my-trade" class="project-link" target="_blank"
+                        rel="noopener noreferrer">
+                        <h2>Hold my trade</h2>
+                        <hr>
+                        <p class="project-description">Real time trading-like beer prices for Wall Street enthusiasts
+                        </p>
+                    </a>
+                    <a href="https://github.com/leopnt/blockblockcoin" class="project-link" target="_blank"
+                        rel="noopener noreferrer">
+                        <h2>BlockBlockCoin</h2>
+                        <hr>
+                        <p class="project-description">Blockchain system in C for learning purposes</p>
+                    </a>
+
+                    <br>
+                    <h1>Experience</h1>
+                    <a href="https://blablacar.fr" class="project-link" target="_blank" rel="noopener noreferrer">
+                        <h2>Software Engineer Intern at BlaBlaCar</h2>
+                        <hr>
+                        <p class="project-description">Machine learning algorithm development to improve UX with
+                            natural language processing</p>
+                    </a>
+
+                    <div class="external-links">
+                        <a href="https://linkedin.com/in/leopoinet"><img src="./src/linkedin.png" alt="linkedin"></a>
+                        <a href="https://github.com/leopnt"><img src="./src/github.png" alt="github"></a>
+                        <a href="https://leopnt.itch.io"><img src="./src/itch.png" alt="itch.io"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card__caption card__caption--bottom">
+                Copyright © leopnt 2022. All rights reserved.
+            </div>
+            <div class="card__caption card__caption--side">
+                <em>Powered by WebGL</em>
+            </div>
+        </div>
+    </div>
+
+    <script id="vert-shader" type="x-shader/x-vertex">
 // Vertex Shader
 
 precision mediump int;
@@ -135,7 +145,7 @@ void main() {
 }
         </script>
 
-        <script id="frag-shader" type="x-shader/x-fragment">
+    <script id="frag-shader" type="x-shader/x-fragment">
 // Fragment shader
 
 precision mediump int;
@@ -149,6 +159,7 @@ void main() {
 }
         </script>
 
-        <script src="./src/main.js"></script>
-    </body>
+    <script src="./src/main.js"></script>
+</body>
+
 </html>
