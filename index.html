@@ -7,166 +7,156 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles.css">
     <title>leopnt</title>
-
-    <script src="./lib/utils.js"></script>
 </head>
 
 <body>
-    <div class="scene" id="scene">
-        <div class="card" id="card">
-            <div class="card__layer card__layer--front">
-                <div class="card__page card__page--front">
-                    <div class="header">
-                        <a href="mailto:leopnt.dev@gmail.com">leopnt.dev@gmail.com</a>
-                        <p>Polytech</p>
-                    </div>
+    <div class="page">
+        <h1>Léo Poinet's portfolio</h1>
+        Passionate engineer. I like to design and build simple things that meet our needs.
 
-                    <div class="name-title">
-                        <h1>Léo POINET</h1>
-                        <p>Computer Science Student</p>
-                    </div>
-                    <div class="footer">
-                        <p>Born in 2000 in Tours, France.</p>
-                        <p>Currently in Munich, Germany.</p>
-                    </div>
-                </div>
-            </div>
+        <br>
+        <br>
+        <br>
 
-            <div class="card__layer card__layer--middle" id="flip-button">
-                <div id="flip-hint-anim-container">
-                    <div id="flip-hint-anim"></div>
-                </div>
-                <canvas class="card__layer card__layer--middle" id="webgl-canvas">
-                    Your browser doesn't seem to support WebGl
-                </canvas>
-            </div>
+        <img class="img-large" src="assets/images/hiring_leopnt_consequences_large.excalidraw.svg" alt="Diagram Large">
+        <img class="img-small" src="assets/images/hiring_leopnt_consequences_small.excalidraw.svg" alt="Diagram Small">
+        <div class="center"><u>What happens when you hire Léo Poinet</u></div>
 
-            <div class="card__layer card__layer--back">
-                <div class="card__page card__page--back">
-                    <p class="pitch">
-                        Have you ever played LEGO™ ? So you just discovered my vision of computer science:
-                        simplify problems into elementary bricks and assemble them to find a creative solution.
-                    </p>
-                    <br>
-                    <p>Let's build together now !</p>
-                    <br>
-                    <h1>Latest works</h1>
-                    <a href="https://github.com/leopnt/bousse" class="project-link" target="_blank"
-                        rel="noopener noreferrer">
-                        <h2>Bousse</h2>
-                        <hr>
-                        <p class="project-description">Lightweight DJ software with trackpad support
-                        </p>
-                    </a>
-                    <a href="https://github.com/leopnt/auto_digger" class="project-link" target="_blank"
-                        rel="noopener noreferrer">
-                        <h2>Auto Digger</h2>
-                        <hr>
-                        <p class="project-description">Automatic track digger using raw audio</p>
-                    </a>
-                    <a href="https://github.com/leopnt/chip8-interpreter" class="project-link" target="_blank"
-                        rel="noopener noreferrer">
-                        <h2>CHIP-8 Emulator</h2>
-                        <hr>
-                        <p class="project-description">CHIP-8 Interpreter from scratch</p>
-                    </a>
+        <h2>Professional experiences</h2>
+        <div class="table-scroll">
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Description</th>
+                    <th>Date Begin</th>
+                    <th>Date End</th>
+                </tr>
+                <tr>
+                    <td>Data and Project Engineer</td>
+                    <td>Air France Hop</td>
+                    <td>Manage data projects with technical teams and flight safety department</td>
+                    <td><span class="nowrap">Dec. 2024</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Computer Vision Engineer Intern</td>
+                    <td>Beckman Coulter Biomedical GmbH</td>
+                    <td>Develop a sample tube type recognition software with a dedicated team of 5 people</td>
+                    <td><span class="nowrap">April 2024</span></td>
+                    <td><span class="nowrap">Sept. 2024</span></td>
+                </tr>
+                <tr>
+                    <td>Software Engineer Intern</td>
+                    <td>SNCF Voyageurs</td>
+                    <td>Develop a schedule helper tool for the team in charge of trains cleanliness</td>
+                    <td><span class="nowrap">May 2023</span></td>
+                    <td><span class="nowrap">Aug. 2023</span></td>
+                </tr>
+                <tr>
+                    <td>Chief Information Officer</td>
+                    <td>IdéSYS</td>
+                    <td>Manage "Junior Entreprise" IT systems and GDPR compliance</td>
+                    <td><span class="nowrap">Jan. 2022</span></td>
+                    <td><span class="nowrap">Jan. 2023</span></td>
+                </tr>
+                <tr>
+                    <td>Software Engineer Intern</td>
+                    <td>BlaBlaCar</td>
+                    <td>Extract insights on driver's behavior using textual description of rides for cross-functional
+                        teams
+                    </td>
+                    <td><span class="nowrap">June 2022</span></td>
+                    <td><span class="nowrap">Aug. 2022</span></td>
+                </tr>
+            </table>
+        </div>
+        <p class="center"><u>Léo Poinet's professional experiences</u></p>
 
-                    <br>
-                    <h1>Experience</h1>
-                    <a href="https://beckmancoulter.com" class="project-link" target="_blank" rel="noopener noreferrer">
-                        <h2>Software Engineer Intern at Beckman Coulter</h2>
-                        <hr>
-                        <p class="project-description">Using computer vision to
-                        quickly and accurately recognize sample tubes</p>
-                    </a>
-                    <a href="https://sncf.com" class="project-link" target="_blank" rel="noopener noreferrer">
-                        <h2>Software Engineer Intern at SNCF</h2>
-                        <hr>
-                        <p class="project-description">Data pipeline from micro-services to visualisation for
-                            faster and better decision making</p>
-                    </a>
-                    <a href="https://blablacar.fr" class="project-link" target="_blank" rel="noopener noreferrer">
-                        <h2>Software Engineer Intern at BlaBlaCar</h2>
-                        <hr>
-                        <p class="project-description">Machine learning algorithm development to improve UX with
-                            natural language processing</p>
-                    </a>
+        <h2>Personal projects</h2>
+        <div class="table-scroll">
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Link</th>
+                    <th>Date Begin</th>
+                </tr>
+                <tr>
+                    <td>CDM</td>
+                    <td>Build an IOT device to get driving and road insights</td>
+                    <td></td>
+                    <td><span class="nowrap">Jan. 2025</span></td>
+                </tr>
+                <tr>
+                    <td>Bousse</td>
+                    <td>Build a lightweight DJ software with trackpad support for personal use</td>
+                    <td><a href="https://github.com/leopnt/bousse">https://github.com/leopnt/bousse</a></td>
+                    <td><span class="nowrap">June 2024</span></td>
+                </tr>
+                <tr>
+                    <td>Similarity measure of time-based event sequence data</td>
+                    <td>Improve similarity measure and visualization of time-based event sequence data for the predictive maintenance of business jets. <em>End of engineering study project</em></td>
+                    <td></td>
+                    <td><span class="nowrap">Oct. 2023</span></td>
+                </tr>
+                <tr>
+                    <td>Comment Music Classifier</td>
+                    <td>Custom music tagging system for DJs</td>
+                    <td><a
+                            href="https://github.com/leopnt/comment-music-classifier">https://github.com/leopnt/comment-music-classifier</a>
+                    </td>
+                    <td><span class="nowrap">May 2023</span></td>
+                </tr>
+                <tr>
+                    <td>BlaBlaCar Weekly Bot</td>
+                    <td>Automate weekly search of a convenient carpooling ride</td>
+                    <td><a
+                            href="https://github.com/leopnt/blablacar-weekly-bot">https://github.com/leopnt/blablacar-weekly-bot</a>
+                    </td>
+                    <td><span class="nowrap">Jan. 2022</span></td>
+                </tr>
+            </table>
+        </div>
+        <p class="center"><u>Léo Poinet's personal projects</u></p>
 
-                    <div class="external-links">
-                        <a href="https://linkedin.com/in/leopoinet"><img src="./src/linkedin.png" alt="linkedin"></a>
-                        <a href="https://github.com/leopnt"><img src="./src/github.png" alt="github"></a>
-                        <a href="https://leopnt.itch.io"><img src="./src/itch.png" alt="itch.io"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="card__caption card__caption--bottom">
-                Copyright © leopnt 2024. All rights reserved.
-            </div>
+        <h2>Random facts and vision</h2>
+        <p>At time of writing...</p>
+        <ul>
+            <li>Don't give a f***.</li>
+            <li>There are the things you can control and the things you cannot.</li>
+            <li>Be a gentleman with people.</li>
+            <li>Simplicity is hard to achieve.</li>
+            <li>Make things simple.</li>
+            <li>The world may prefer quantity over quality.</li>
+            <li>If possible, always prefer quality over quantity.</li>
+            <li>It takes years of effort to be an expert somewhere.</li>
+            <li><em>A comfort zone is a beautiful place. But nothing ever grows here.</em></li>
+            <li>Always set a deadline to a task or goal.</li>
+            <li><strong>Aways start with the most annoying tasks first.</strong></li>
+            <li>Break down big tasks into smaller tasks.</li>
+            <li>If you think something will take you N days/hours to finish, plan that it will take you 2*N.</li>
+            <li>Never be late on tasks.</li>
+            <li>You cannot do everything. Choose carefully.</li>
+            <li><em>The difference between science and messing around is "writing it down."</em></li>
+            <li><em>Computer science is the industrialisation of intellectual work.</em></li>
+            <li>Computers are good at automating easy and repetitive tasks.</li>
+            <li>AI is good at automating complex but predictable tasks.</li>
+            <li>Nature is beautiful.</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>
+            <em><u>poinetleo at gmail dot com</u></em>
+        </p>
+
+        <br>
+        <hr>
+
+        <div class="center">
+            <p>Built with care in front of a computer.</p>
         </div>
     </div>
-
-    <script id="vert-shader" type="x-shader/x-vertex">
-// Vertex Shader
-
-precision mediump int;
-precision mediump float;
-
-uniform float u_Time;
-uniform vec2 u_Mouse;
-uniform vec2 u_ScreenSize;
-
-attribute vec3 a_Vertex;
-
-float noise(float x) {
-    float y = 0.0;
-
-    for (int i = 0; i < 10; i++) {
-        y += 0.10 * sin(float(i / 2) * float(i) * x + float(i / 3));
-    }
-
-    return y;
-}
-
-void main() {
-  float x = a_Vertex.x;
-  float y = a_Vertex.y;
-  float z = a_Vertex.z;
-
-  float theta_x = 1.0 + 0.05 * u_Mouse.x;
-  mat4 rot_y = mat4(mat3( cos(theta_x),            0, sin(theta_x),
-                                     0,            1,            0,
-                         -sin(theta_x),            0, cos(theta_x)));
-
-  float theta_y = 1.0 + 0.07 * u_Mouse.y;
-  mat4 rot_x = mat4(mat3(            1,            0,            0,
-                                     0, cos(theta_y),-sin(theta_y),
-                                     0, sin(theta_y), cos(theta_y)));
-  
-  vec4 trans = vec4(0.0, 0.2 * noise(0.06 * u_Time + x + 50.0 * z + z), 0.0, 0.0);
-  trans += vec4(0.0, 0.3 * exp(-(30.0 * x * x)), 0.0, 0.0);
-  trans += vec4(-0.7 + 0.05 * u_Mouse.x, -0.2, 0.0, 0.0);
-  vec4 scale = vec4(1000.0 / u_ScreenSize.x, 1.0, 1.6, 1.0);
-
-  float zToDivideBy = 1.0 + z * 0.5; // adds perspective
-
-  gl_PointSize = 2.0;
-  gl_Position = rot_x * ((vec4(x / zToDivideBy, y / zToDivideBy, z, 0.8) * scale + trans));
-}
-        </script>
-
-    <script id="frag-shader" type="x-shader/x-fragment">
-// Fragment shader
-
-precision mediump int;
-precision mediump float;
-
-uniform vec2 u_ScreenSize;
-
-void main() {
-    vec2 uv = gl_FragCoord.xy / u_ScreenSize;
-    gl_FragColor = vec4(0.6 - uv.x, 0.6 - uv.x, 0.6 - uv.x, 1.0);
-}
-        </script>
 
     <script src="./src/main.js"></script>
 </body>
