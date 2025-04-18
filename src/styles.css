@@ -73,8 +73,9 @@ body {
   }
 }
 
-li {
+ul {
   list-style-type: '- ';
+  padding-inline-start: 1.5em;
 }
 
 h1 {
