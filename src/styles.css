@@ -28,17 +28,20 @@
 
 img {
   padding: 0;
-  margin: 0;
-  width: 100%;
+  margin: auto;
+  width: 90%;
+  justify-content: center;
 }
 
 /* Default: show large, hide small */
 .img-large {
   display: block;
+  padding: 4em 0;
 }
 
 .img-small {
   display: none;
+  padding: 2em 0;
 }
 
 /* On small screens, switch */
@@ -103,12 +106,12 @@ table {
 
 table tr:nth-child(even) {
   background-color: #f7f7f7;
-  /* Light gray for even rows */
+  /* light gray for even rows */
 }
 
 table tr:nth-child(odd) {
   background-color: #fff;
-  /* White for odd rows */
+  /* white for odd rows */
 }
 
 th,
@@ -141,7 +144,7 @@ td {
   overflow-x: auto;
 }
 
-/* Only enable horizontal scroll on small screens */
+/* only enable horizontal scroll on small screens */
 @media (max-width: 700px) {
   .table-scroll {
     overflow-x: auto;
@@ -154,7 +157,7 @@ td {
     width: calc(700px - 4rem);
   }
 
-  /* Visual cue */
+  /* visual cue */
   .table-scroll::-webkit-scrollbar {
     height: 8px;
   }
